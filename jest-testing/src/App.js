@@ -1,10 +1,10 @@
-import Todo from './Todo'
+import Todos from './Todos'
 import './App.css';
 
 function App() {
   return (
     <div className="App">
-      <Todo />
+      <Todos />
     </div>
   );
 }
