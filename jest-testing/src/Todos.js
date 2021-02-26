@@ -3,10 +3,12 @@ import { useState } from 'react'
 const Todos = () => {
 
     const [value, setValue] = useState('')
+    const [number, setNumber] = useState(0)
     const [todos, setTodos] = useState([])
 
     const handleClick = () => {
-        setTodos([...todos, value])
+        setTodos([...todos, {id: number + 1, value: value}])
+        setNumber(number + 1)
         setValue('')
     }
 
@@ -21,7 +23,7 @@ const Todos = () => {
             <button style={{marginLeft: '10px'}}
                     onClick={handleClick}>Add Item</button>
             <hr></hr>
-            {todos.map(todo => <p>{todo}</p>)}
+            {todos.map(todo => <p>{todo.id}. {todo.value}</p>)}
         </div>
     )
 }
